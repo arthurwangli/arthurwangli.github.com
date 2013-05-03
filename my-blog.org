@@ -1,0 +1,8 @@
+#+FILENAME_SANITIZER: md5
+
+#+TITLE: arthur li' blog
+#+DESCRIPTION: my first blog
+#+DATA:
+
+#+STARTUP: logdone
+

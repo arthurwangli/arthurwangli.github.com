@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>o-blog</title>
+  <link href="http://renard.github.com/o-blogindex.xml" rel="self" />
+  <link href="http://renard.github.com/o-blog"/>
+  <updated>2013-02-08T19:33:26Z</updated>
+  <id>http://renard.github.com/o-blogindex.xml</id>
+  <entry><title type="html">Adding an image into a post</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/08/21_adding-an-image-into-a-post.html"/><updated>2012-08-21T10:43:00Z</updated><published>2012-08-21T10:43:00Z</published><id>tips/2012/08/21_adding-an-image-into-a-post.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;div class="row "&gt;&lt;div class="span8 "&gt;
+
+
+&lt;p&gt;
+Adding an image to a post is simple since &lt;a href="http://orgmode.org"&gt;Org-mode&lt;/a&gt; offers a special
+link scheme for that. An image file can be stored anywhere in your
+local directory structure with a valid path. During the export
+process, the image file is copied into a folder related to the post,
+and all exported links are corrected to point to its new location.
+&lt;/p&gt;
+
+
+
+&lt;div class="row "&gt;&lt;div class="span5 "&gt;
+
+
+&lt;p&gt;
+For example, the Org-mode markup of &lt;code&gt;file:emacs-logo.png&lt;/code&gt; surrounded
+by &lt;a href="http://orgmode.org/org.html#Link-format"&gt;double square brackets&lt;/a&gt; will result (upon export/publishing) in
+copying that image from its current location (in the same directory as
+this sample.org file) to its target location of
+&lt;code&gt;tips/2012/08/21_adding-an-image-into-a-post/emacs-logo.png&lt;/code&gt;.
+&lt;/p&gt;
+
+
+&lt;/div&gt;&lt;div class="span3 "&gt;
+
+
+
+&lt;pre class="src src-org"&gt;,# NOTE: The link should be complete.
+,&lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;file:../../../tips/2012/08/21_adding-an-image-into-a-post/emacs-logo.png&lt;/span&gt;
+&lt;/pre&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+&lt;p&gt;
+&lt;img src="../../../tips/2012/08/21_adding-an-image-into-a-post/emacs-logo.png"  alt="../../../tips/2012/08/21_adding-an-image-into-a-post/emacs-logo.png" /&gt;
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+&lt;p&gt;
+The exported HTML result will resemble:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-html"&gt;&amp;lt;&lt;span style="color: #0000ff;"&gt;img&lt;/span&gt; &lt;span style="color: #a0522d;"&gt;src&lt;/span&gt;=&lt;span style="color: #8b2252;"&gt;"21_adding-an-image-into-a-post/emacs-logo.png"&lt;/span&gt;  &lt;span style="color: #a0522d;"&gt;alt&lt;/span&gt;=&lt;span style="color: #8b2252;"&gt;"21_adding-an-image-into-a-post/emacs-logo.png"&lt;/span&gt; /&amp;gt;
+&lt;/pre&gt;
+
+
+
+
+&lt;p&gt;
+To keep files organized, you can place all files under a subfolder,
+e.g. &lt;code&gt;media/&lt;/code&gt;. Then you can create a sub-folder for each post, such
+as:
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/media/post1/file1&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/media/post1/file2&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/media/post2/file&lt;/code&gt;
+&lt;/li&gt;
+&lt;li&gt;etc.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+</content></entry><entry><title type="html">Create static pages</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/05/21_create-static-pages.html"/><updated>2012-05-21T12:48:00Z</updated><published>2012-05-21T12:48:00Z</published><id>tips/2012/05/21_create-static-pages.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/bootstrap.html" term="Bootstrap" label="Bootstrap"/><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;p&gt;
+Static pages are create exactly like blog pages. The only thing you need to
+add is a &lt;code&gt;PAGE&lt;/code&gt; property. The exported path is relative to &lt;code&gt;#+PUBLISH_DIR:&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+You can also specify a custom template for your static page by adding a
+&lt;code&gt;TEMPLATE&lt;/code&gt; property. The template path is relative to &lt;code&gt;#+TEMPLATE_DIR:&lt;/code&gt;.
+&lt;/p&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #0000ff;"&gt;* Static page&lt;/span&gt;
+,   :PROPERTIES:
+,   :PAGE:     path/to/static/page.html
+,   :TEMPLATE: static-page.html
+,   :END:
+&lt;/pre&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+</content></entry><entry><title type="html">Add a custom font</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/05/07_add-a-custom-font.html"/><updated>2012-05-07T16:38:00Z</updated><published>2012-05-07T16:38:00Z</published><id>tips/2012/05/07_add-a-custom-font.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/bootstrap.html" term="Bootstrap" label="Bootstrap"/><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;p&gt;
+&lt;a href="http://www.google.com/webfonts"&gt;Google webfonts&lt;/a&gt; can be easily used in o-blog in 2 different ways: using
+the Google API, or by providing resources in the &lt;code&gt;templates/style&lt;/code&gt; directory.
+&lt;/p&gt;
+
+
+&lt;div class="alert alert-warning"&gt;&lt;p class="alert-heading"&gt;Caution&lt;/p&gt;
+
+&lt;p&gt;
+Using many font styles can slow down your webpage, so only select the font
+styles that you actually need on your webpage.
+&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;
+Both examples below use the &lt;a href="http://www.yanone.de/typedesign/kaffeesatz/"&gt;Yanone Kaffeesatz&lt;/a&gt; font.
+&lt;/p&gt;
+
+&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;Using Google API&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+
+&lt;p&gt;
+The &lt;a href="http://www.google.com/webfonts#QuickUsePlace:quickUse/Family:"&gt;quick use&lt;/a&gt; provides an import snippet such as:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-css"&gt;&lt;span style="color: #483d8b;"&gt;@import&lt;/span&gt; url(&lt;span style="color: #8b2252;"&gt;"http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700&amp;amp;subset=latin,latin-ext"&lt;/span&gt;);
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+That line should be included into the
+&lt;code&gt;templates/style/less/o-blog-default.less&lt;/code&gt; file in which you should also add
+something like:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-css"&gt;&lt;span style="color: #0000ff;"&gt;h1, h2, h3, h4, h5, h6 &lt;/span&gt;{
+    &lt;span style="color: #a0522d;"&gt;font-family&lt;/span&gt;: &lt;span style="color: #8b2252;"&gt;"Yanone Kaffeesatz"&lt;/span&gt;, sans-serif;
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+And that's it.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;Providing resources&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+
+&lt;p&gt;
+That is less efficient in terms of network resources but provides a good
+alternative for offline publications.
+&lt;/p&gt;
+
+&lt;p&gt;
+The script &lt;code&gt;get-font&lt;/code&gt; does all needed jobs.
+&lt;/p&gt;
+
+
+&lt;div class="o-blog-source"&gt;&lt;a class="btn btn-info" data-toggle="modal" data-target="#get-font" &gt;&lt;i class="icon-file icon-white"&gt;&lt;/i&gt;&amp;nbsp;get-font&lt;/a&gt;&lt;/div&gt;&lt;div class="modal fade hide" id="get-font"&gt;&lt;div class="modal-header"&gt;&lt;a class="close" data-dismiss="modal"&gt;&#215;&lt;/a&gt;&lt;h3&gt;get-font&lt;/h3&gt;&lt;/div&gt;&lt;div class="modal-body"&gt;&lt;pre&gt;
+&lt;span style="color: #b22222;"&gt;#&lt;/span&gt;&lt;span style="color: #b22222;"&gt;!/bin/&lt;/span&gt;&lt;span style="color: #a020f0;"&gt;sh&lt;/span&gt;&lt;span style="color: #b22222;"&gt;
+&lt;/span&gt;
+&lt;span style="color: #a020f0;"&gt;if &lt;/span&gt;&lt;span style="color: #483d8b;"&gt;test&lt;/span&gt; -z &lt;span style="color: #8b2252;"&gt;"$1"&lt;/span&gt;; &lt;span style="color: #a020f0;"&gt;then&lt;/span&gt;
+    &lt;span style="color: #483d8b;"&gt;echo&lt;/span&gt; &lt;span style="color: #8b2252;"&gt;"Usage: $0 font-url"&lt;/span&gt;
+    &lt;span style="color: #a020f0;"&gt;exit&lt;/span&gt; 1
+&lt;span style="color: #a020f0;"&gt;fi&lt;/span&gt;
+
+&lt;span style="color: #a0522d;"&gt;FONT_DIR&lt;/span&gt;=templates/style/font
+&lt;span style="color: #a0522d;"&gt;LESS_DIR&lt;/span&gt;=templates/style/less
+
+&lt;span style="color: #a0522d;"&gt;FONT_URL&lt;/span&gt;=&lt;span style="color: #8b2252;"&gt;"$1"&lt;/span&gt;
+&lt;span style="color: #a0522d;"&gt;LESS_FILE&lt;/span&gt;=$(&lt;span style="color: #483d8b;"&gt;echo&lt;/span&gt; &lt;span style="color: #8b2252;"&gt;"$FONT_URL"&lt;/span&gt; | sed -n &lt;span style="color: #8b2252;"&gt;'s/.*family=\([^:]\+\).*/\1/p'&lt;/span&gt; | sed &lt;span style="color: #8b2252;"&gt;'s/+/-/g'&lt;/span&gt;)
+
+&lt;span style="color: #b22222;"&gt;# &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Wee need to provide a valid user agent to get woff fonts
+&lt;/span&gt;&lt;span style="color: #a0522d;"&gt;UA&lt;/span&gt;=&lt;span style="color: #8b2252;"&gt;'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.65 Safari/535.11'&lt;/span&gt;
+
+
+&lt;span style="color: #a0522d;"&gt;CSS&lt;/span&gt;=$(curl -H &lt;span style="color: #8b2252;"&gt;"${UA}"&lt;/span&gt; ${&lt;span style="color: #a0522d;"&gt;FONT_URL&lt;/span&gt;})
+
+&lt;span style="color: #483d8b;"&gt;echo&lt;/span&gt; &lt;span style="color: #8b2252;"&gt;"${CSS}"&lt;/span&gt; | sed -n &lt;span style="color: #8b2252;"&gt;"s#.*local('\([^']\+\)'), url('\([^']\+\)').*#curl -o ${FONT_DIR}/\1.woff \2#p"&lt;/span&gt; | sh -
+
+&lt;span style="color: #483d8b;"&gt;echo&lt;/span&gt; &lt;span style="color: #8b2252;"&gt;"${CSS}"&lt;/span&gt; | sed  &lt;span style="color: #8b2252;"&gt;"s#\(.*\)local('\([^']\+\)'), url('\([^']\+\)')\(.*\)#\1local('\2'), url('../font/\2.woff')\4#"&lt;/span&gt;  &amp;gt; &lt;span style="color: #8b2252;"&gt;"${LESS_DIR}/font-${LESS_FILE}.less"&lt;/span&gt;
+
+&lt;span style="color: #483d8b;"&gt;echo&lt;/span&gt; &lt;span style="color: #8b2252;"&gt;"You should add '@import \"font-${LESS_FILE}.less\";' to templates/style/less/o-blog-default.less"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;p&gt;
+You can run:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;./get-font &lt;span style="color: #8b2252;"&gt;'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700&amp;amp;subset=latin,latin-ext'&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+And add the font declaration in &lt;code&gt;templates/style/less/o-blog-default.less&lt;/code&gt;:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-css"&gt;&lt;span style="color: #483d8b;"&gt;@import&lt;/span&gt; &lt;span style="color: #8b2252;"&gt;"font-Yanone-Kaffeesatz.less"&lt;/span&gt;;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Finally, declare its use as in the Google API version:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-css"&gt;&lt;span style="color: #0000ff;"&gt;h1, h2, h3, h4, h5, h6 &lt;/span&gt;{
+    &lt;span style="color: #a0522d;"&gt;font-family&lt;/span&gt;: &lt;span style="color: #8b2252;"&gt;"Yanone Kaffeesatz"&lt;/span&gt;, sans-serif;
+}
+&lt;/pre&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">Some Bootstrap features</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/05/03_some-bootstrap-features.html"/><updated>2012-05-03T21:40:00Z</updated><published>2012-05-03T21:40:00Z</published><id>tips/2012/05/03_some-bootstrap-features.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/bootstrap.html" term="Bootstrap" label="Bootstrap"/><content type="html">&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;Hero-unit&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+
+
+
+&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+begin_o_blog_hero_unit&lt;/span&gt;
+&amp;lt;h1&amp;gt;Heading&amp;lt;/h1&amp;gt;
+
+, tagline
+
+#+BEGIN_HTML
+,    &amp;lt;a class="btn btn-primary btn-large"&amp;gt;
+,      Learn more
+,    &amp;lt;/a&amp;gt;
+&lt;span style="color: #b22222;"&gt;#+end_o_blog_hero_unit&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+
+&lt;div class="hero-unit"&gt;
+
+
+
+
+
+&lt;h1&gt;Heading&lt;/h1&gt;
+
+&lt;p&gt;
+tagline
+&lt;/p&gt;
+
+
+    &lt;a class="btn btn-primary btn-large"&gt;
+      Learn more
+    &lt;/a&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;Page header&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+
+
+
+&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+begin_o_blog_page_header&lt;/span&gt;
+&amp;lt;h1&amp;gt;Page header&amp;lt;/h1&amp;gt;
+,Some text
+&lt;span style="color: #b22222;"&gt;#+end_o_blog_page_header&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+
+&lt;div class="page-header"&gt;
+
+
+
+
+&lt;h1&gt;Page header&lt;/h1&gt;
+&lt;p&gt;
+Some text
+&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-3" class="outline-3"&gt;
+&lt;h3 id="sec-3"&gt;Using labels&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3"&gt;
+
+
+&lt;p&gt;
+    Label and annotate text using a &lt;code&gt;label:TYPE&lt;/code&gt; link prefix where &lt;code&gt;TYPE&lt;/code&gt; is
+    one of &lt;code&gt;default&lt;/code&gt;, &lt;code&gt;success&lt;/code&gt;, &lt;code&gt;warning&lt;/code&gt;, &lt;code&gt;important&lt;/code&gt;, &lt;code&gt;info&lt;/code&gt; or
+    &lt;code&gt;reverse&lt;/code&gt;. The URL part of the link is used as the label text.
+&lt;/p&gt;
+
+
+&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;pre class="src src-txt"&gt;[[ob-label:default][Default]]
+[[ob-label:success][Success]]
+[[ob-label:warning][Warning]]
+[[ob-label:important][Important]]
+[[ob-label:info][Info]]
+[[ob-label:inverse][Inverse]]
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="label label-default"&gt;Default&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="label label-success"&gt;Success&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="label label-warning"&gt;Warning&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="label label-important"&gt;Important&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="label label-info"&gt;Info&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="label label-inverse"&gt;Inverse&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-4" class="outline-3"&gt;
+&lt;h3 id="sec-4"&gt;Using badges&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4"&gt;
+
+
+&lt;p&gt;
+    Indicators and unread counts as for labels. Use the &lt;code&gt;badge:TYPE&lt;/code&gt; link
+    prefix.
+&lt;/p&gt;
+
+
+&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;pre class="src src-text"&gt;[[ob-badge:default][Default]]
+[[ob-badge:success][Success]]
+[[ob-badge:warning][Warning]]
+[[ob-badge:important][Important]]
+[[ob-badge:info][Info]]
+[[ob-badge:inverse][Inverse]]
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="badge badge-default"&gt;Default&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="badge badge-warning"&gt;Warning&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="badge badge-important"&gt;Important&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="badge badge-inverse"&gt;Inverse&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-5" class="outline-3"&gt;
+&lt;h3 id="sec-5"&gt;Using progress bars&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5"&gt;
+
+
+&lt;p&gt;
+    For loading, redirecting, or action status. Use a &lt;code&gt;progress:TYPE&lt;/code&gt; link
+    where &lt;code&gt;TYPE&lt;/code&gt; is one of &lt;code&gt;info&lt;/code&gt;, &lt;code&gt;success&lt;/code&gt;, &lt;code&gt;warning&lt;/code&gt; or
+    &lt;code&gt;danger&lt;/code&gt;. Additional classes (&lt;code&gt;striped&lt;/code&gt; or &lt;code&gt;active&lt;/code&gt;) can be added using comma.
+    The URL is the progress percent.
+&lt;/p&gt;
+
+
+&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;pre class="src src-text"&gt;[[ob-progress:info][25]]
+[[ob-progress:success,striped][50]]
+[[ob-progress:warning,striped,active][75]]
+[[ob-progress:danger][100]]
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+&lt;p&gt;
+    &lt;div class="progress progress-info"&gt;&lt;div class="bar" style="width: 25%;"&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="progress progress-success progress-striped"&gt;&lt;div class="bar" style="width: 50%;"&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="progress progress-warning progress-striped active"&gt;&lt;div class="bar" style="width: 75%;"&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="progress progress-danger"&gt;&lt;div class="bar" style="width: 100%;"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-6" class="outline-3"&gt;
+&lt;h3 id="sec-6"&gt;Well&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6"&gt;
+
+
+&lt;p&gt;
+Use the well as a simple effect on an element to give it an inset effect.
+&lt;/p&gt;
+
+
+&lt;div class="row "&gt;&lt;div class="span7 "&gt;
+
+
+
+&lt;pre class="src src-text"&gt; #+begin_o_blog_well
+, Look, I'm in a well!
+ #+end_o_blog_well
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span4 "&gt;
+
+
+
+&lt;div class="well"&gt;
+
+
+&lt;p&gt;
+Look, I'm in a well!
+&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">Using Bootstrap grid</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/02/10_using-bootstrap-grid.html"/><updated>2012-02-10T01:19:00Z</updated><published>2012-02-10T01:19:00Z</published><id>tips/2012/02/10_using-bootstrap-grid.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/bootstrap.html" term="Bootstrap" label="Bootstrap"/><content type="html">&lt;p&gt;
+&lt;a href="http://twitter.github.com/bootstrap/scaffolding.html"&gt;Bootstrap scaffolding&lt;/a&gt; can be defined using both &lt;code&gt;#+begin_o_blog_row&lt;/code&gt; and
+&lt;code&gt;#+end_o_blog_row&lt;/code&gt; directives (or &lt;code&gt;&amp;lt;og&lt;/code&gt; &lt;code&gt;TAB&lt;/code&gt; shortcut). A new column can
+be started using &lt;code&gt;#+o_blog_row_column&lt;/code&gt; single directive (or &lt;code&gt;&amp;lt;ogr&lt;/code&gt; &lt;code&gt;TAB&lt;/code&gt;
+shortcut).
+&lt;/p&gt;
+
+
+
+&lt;div class="row show-grid"&gt;&lt;div class="span6 "&gt;
+
+&lt;p&gt;
+&lt;b&gt;Example&lt;/b&gt;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+begin_o_blog_row 2 -1 show-grid&lt;/span&gt;
+,Column 1
+#+o_blog_row_column 2
+,Column 2
+&lt;span style="color: #b22222;"&gt;#+end_o_blog_row&lt;/span&gt;
+&lt;/pre&gt;
+
+
+
+&lt;/div&gt;&lt;div class="span6 "&gt;
+
+
+&lt;p&gt;
+&lt;b&gt;Output&lt;/b&gt;
+&lt;/p&gt;
+
+
+&lt;div class="row show-grid"&gt;&lt;div class="span2 offset1"&gt;
+
+
+&lt;p&gt;
+Column 1
+&lt;/p&gt;
+
+
+&lt;/div&gt;&lt;div class="span2 "&gt;
+
+
+&lt;p&gt;
+Column 2
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+&lt;p&gt;
+The syntax is:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+begin_o_blog_row SPAN OFFSET GRID-CLASS&lt;/span&gt;
+,Column 1
+#+o_blog_row_column SPAN OFFSET
+,Column 2
+,...
+#+o_blog_row_column SPAN OFFSET
+,Column n
+&lt;span style="color: #b22222;"&gt;#+end_o_blog_row&lt;/span&gt;
+
+&lt;/pre&gt;
+
+</content></entry><entry><title type="html">Adding icons</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/02/10_adding-icons.html"/><updated>2012-02-10T00:19:00Z</updated><published>2012-02-10T00:19:00Z</published><id>tips/2012/02/10_adding-icons.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/bootstrap.html" term="Bootstrap" label="Bootstrap"/><content type="html">&lt;p&gt;
+Icons from &lt;a href="http://glyphicons.com/"&gt;glyphicons&lt;/a&gt; are supported, by simply naming the icon using
+italics style forward-slashes:
+&lt;/p&gt;
+
+
+&lt;div class="row "&gt;&lt;div class="span6 "&gt;
+
+
+
+&lt;p&gt;
+&lt;b&gt;Source example&lt;/b&gt;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-org"&gt;,/icon-calendar/ calendar
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span6 "&gt;
+
+
+&lt;p&gt;
+&lt;b&gt;Rendered output&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;i&gt;icon-calendar&lt;/i&gt; calendar
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+
+&lt;p&gt;
+Icons can also be used for the top &lt;i&gt;navbar&lt;/i&gt; using something like:
+&lt;/p&gt;
+
+
+&lt;div class="row "&gt;&lt;div class="span6 "&gt;
+
+
+&lt;p&gt;
+&lt;b&gt;Source example&lt;/b&gt;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-org"&gt;,- &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;/icon-book icon-white/ Documentation&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Templates&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Structures&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Functions&lt;/span&gt;
+,  -
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;FAQ&lt;/span&gt;
+
+,- &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;/icon-file icon-white/ Blog&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Adding an image into a post&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Create static pages&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Add a custom font&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Some Bootstrap features&lt;/span&gt;
+,  - &lt;span style="color: #3a5fcd; text-decoration: underline;"&gt;Using Bootstrap grid&lt;/span&gt;
+
+,- &lt;span style="color: #3a5fcd; font-style: italic; text-decoration: underline;"&gt;/icon-tags icon-white/&lt;/span&gt;&lt;span style="color: #3a5fcd; text-decoration: underline;"&gt; Tags&lt;/span&gt;
+
+&lt;/pre&gt;
+
+
+&lt;/div&gt;&lt;div class="span6 "&gt;
+
+
+&lt;p&gt;
+&lt;b&gt;Rendered output&lt;/b&gt;
+&lt;/p&gt;
+
+
+
+&lt;div class="navbar"&gt;
+&lt;div class="navbar-inner"&gt;
+&lt;div class="container"&gt;
+&lt;div class="nav-collapse"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#"&gt;&lt;i&gt;icon-book icon-white&lt;/i&gt; Documentation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="./templates.html"&gt;Templates&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./structures.html"&gt;Structures&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./functions.html"&gt;Functions&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./faq.html"&gt;FAQ&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;&lt;i&gt;icon-file icon-white&lt;/i&gt; Blog&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="./tips/2012/08/21_adding-an-image-into-a-post.html"&gt;Adding an image into a post&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./tips/2012/05/21_create-static-pages.html"&gt;Create static pages&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./tips/2012/05/07_add-a-custom-font.html"&gt;Add a custom font&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./tips/2012/05/03_some-bootstrap-features.html"&gt;Some Bootstrap features&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./tips/2012/02/10_using-bootstrap-grid.html"&gt;Using Bootstrap grid&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="./tags/index.html"&gt;&lt;i&gt;icon-tags icon-white&lt;/i&gt; Tags&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Please note the blank line between menu items. If blanks are omitted, the
+rendered result might be damaged.
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;&lt;/div&gt;
+
+
+
+</content></entry><entry><title type="html">Using modal source code</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/02/09_using-modal-source-code.html"/><updated>2012-02-09T23:13:00Z</updated><published>2012-02-09T23:13:00Z</published><id>tips/2012/02/09_using-modal-source-code.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/bootstrap.html" term="Bootstrap" label="Bootstrap"/><content type="html">&lt;p&gt;
+The &lt;a href="http://twitter.github.com/bootstrap/javascript.html#modals"&gt;Modal&lt;/a&gt; bootstrap script can be used to display the content of an external
+file in a modal window. The magic line is:
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+O_BLOG_SOURCE: path/to/file [mode]&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+The &lt;i&gt;org template shorcut&lt;/i&gt; is &lt;code&gt;&amp;lt;os&lt;/code&gt; &lt;code&gt;TAB&lt;/code&gt;. Two parameters might be used:
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;The mandatory &lt;code&gt;/path/to/file&lt;/code&gt; which is the path to the file from which
+  content should be read.
+&lt;/li&gt;
+&lt;li&gt;The optional &lt;code&gt;mode&lt;/code&gt; parameter, which can be determined if omitted.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Here is an example of the &lt;code&gt;sample-init.el&lt;/code&gt; file:
+&lt;/p&gt;
+
+
+&lt;div class="o-blog-source"&gt;&lt;a class="btn btn-info" data-toggle="modal" data-target="#sample-initel" &gt;&lt;i class="icon-file icon-white"&gt;&lt;/i&gt;&amp;nbsp;sample-init.el&lt;/a&gt;&lt;/div&gt;&lt;div class="modal fade hide" id="sample-initel"&gt;&lt;div class="modal-header"&gt;&lt;a class="close" data-dismiss="modal"&gt;&#215;&lt;/a&gt;&lt;h3&gt;sample-init.el&lt;/h3&gt;&lt;/div&gt;&lt;div class="modal-body"&gt;&lt;pre&gt;
+&lt;span style="color: #b22222;"&gt;;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;sample-init.el --- sample init file to be used to debug o-blog
+&lt;/span&gt;
+&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Copyright &amp;#169; 2012 S&amp;#233;bastien Gross &amp;lt;seb&amp;#8226;&amp;#593;&amp;#428;&amp;#8226;chezwam&amp;#8226;&amp;#598;&amp;#629;&amp;#648;&amp;#8226;org&amp;gt;
+&lt;/span&gt;
+&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Author: S&amp;#233;bastien Gross &amp;lt;seb&amp;#8226;&amp;#593;&amp;#428;&amp;#8226;chezwam&amp;#8226;&amp;#598;&amp;#629;&amp;#648;&amp;#8226;org&amp;gt;
+&lt;/span&gt;&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Keywords: emacs, 
+&lt;/span&gt;&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Created: 2012-03-20
+&lt;/span&gt;&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Last changed: 2012-03-26 16:36:31
+&lt;/span&gt;&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
+&lt;/span&gt;
+&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;This file is NOT part of GNU Emacs.
+&lt;/span&gt;
+&lt;span style="color: #b22222;"&gt;;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Commentary:
+&lt;/span&gt;&lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;
+&lt;/span&gt;
+
+&lt;span style="color: #b22222;"&gt;;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Code:
+&lt;/span&gt;
+
+(&lt;span style="color: #a020f0;"&gt;defun&lt;/span&gt; &lt;span style="color: #0000ff;"&gt;ob-build-sample&lt;/span&gt; ()
+  (&lt;span style="color: #a020f0;"&gt;let*&lt;/span&gt; ((d default-directory)
+         (sample (format &lt;span style="color: #8b2252;"&gt;"%s/.emacs.d/o-blog/example/sample.org"&lt;/span&gt; d))
+         (debugger
+          (&lt;span style="color: #a020f0;"&gt;lambda&lt;/span&gt; (&lt;span style="color: #228b22;"&gt;&amp;amp;rest&lt;/span&gt; debugger-args)
+            (&lt;span style="color: #a020f0;"&gt;let*&lt;/span&gt; ((trace (&lt;span style="color: #a020f0;"&gt;with-temp-buffer&lt;/span&gt;
+                            (insert (&lt;span style="color: #a020f0;"&gt;with-output-to-string&lt;/span&gt; (backtrace)))
+                            (beginning-of-buffer)
+                            &lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;error begins on line 16
+&lt;/span&gt;                            &lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;line stats with "  signal(error ..."
+&lt;/span&gt;                            (goto-line 16)
+                            (goto-char (point-at-bol))
+                            &lt;span style="color: #b22222;"&gt;;; &lt;/span&gt;&lt;span style="color: #b22222;"&gt;Remove null chars
+&lt;/span&gt;                            (replace-regexp-in-string
+                              (char-to-string 0) &lt;span style="color: #8b2252;"&gt;"^@"&lt;/span&gt;
+                              (buffer-substring (point) (point-max))))))
+              (o-blog-bug-report trace))))
+         (debug-on-error t)
+         print-length print-level)
+    (add-to-list 'load-path (format &lt;span style="color: #8b2252;"&gt;"%s/.emacs.d/org-mode/lisp"&lt;/span&gt; d))
+    (add-to-list 'load-path (format &lt;span style="color: #8b2252;"&gt;"%s/.emacs.d/org-mode/contrib/lisp"&lt;/span&gt; d))
+    (add-to-list 'load-path (format &lt;span style="color: #8b2252;"&gt;"%s/.emacs.d/o-blog"&lt;/span&gt; d))
+    (&lt;span style="color: #a020f0;"&gt;require&lt;/span&gt; '&lt;span style="color: #008b8b;"&gt;o-blog&lt;/span&gt;)
+    (print
+      (concat
+        (emacs-version) &lt;span style="color: #8b2252;"&gt;"\n"&lt;/span&gt;
+        (org-version) &lt;span style="color: #8b2252;"&gt;"\n"&lt;/span&gt;
+        (o-blog-version) &lt;span style="color: #8b2252;"&gt;"\n"&lt;/span&gt;))
+    (find-file sample)
+    (org-publish-blog sample)
+    (kill-emacs)))
+&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</content></entry><entry><title type="html">Alerts</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/01/15_alerts.html"/><updated>2012-01-15T20:40:00Z</updated><published>2012-01-15T20:40:00Z</published><id>tips/2012/01/15_alerts.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><content type="html">&lt;p&gt;
+Alerts are declared in &lt;code&gt;o_blog_alert&lt;/code&gt; blocks. There are 4 types of
+them:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;info
+&lt;/li&gt;
+&lt;li&gt;success
+&lt;/li&gt;
+&lt;li&gt;warning
+&lt;/li&gt;
+&lt;li&gt;error
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+begin_o_blog_alert &amp;lt;TYPE&amp;gt; &amp;lt;title&amp;gt;&lt;/span&gt;
+,Text of the alert
+&lt;span style="color: #b22222;"&gt;#+end_o_blog_alert&lt;/span&gt;
+&lt;/pre&gt;
+
+
+
+&lt;div class="alert alert-error"&gt;&lt;p class="alert-heading"&gt;&lt;/p&gt;
+
+
+&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+dolor. Nullam tristique diam non turpis. Cras placerat accumsan
+nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+
+
+
+&lt;div class="alert alert-error"&gt;&lt;p class="alert-heading"&gt;Danger&lt;/p&gt;
+
+
+&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+dolor. Nullam tristique diam non turpis. Cras placerat accumsan
+nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+
+
+&lt;div class="alert alert-warning"&gt;&lt;p class="alert-heading"&gt;Caution&lt;/p&gt;
+
+
+&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+dolor. Nullam tristique diam non turpis. Cras placerat accumsan
+nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class="alert alert-success"&gt;&lt;p class="alert-heading"&gt;Tip&lt;/p&gt;
+
+
+&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+dolor. Nullam tristique diam non turpis. Cras placerat accumsan
+nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+
+
+&lt;div class="alert alert-info"&gt;&lt;p class="alert-heading"&gt;Information&lt;/p&gt;
+
+
+&lt;p&gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+dolor. Nullam tristique diam non turpis. Cras placerat accumsan
+nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+
+</content></entry><entry><title type="html">Some HTML5 samples</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/01/10_some-html5-samples.html"/><updated>2012-01-10T20:58:00Z</updated><published>2012-01-10T20:58:00Z</published><id>tips/2012/01/10_some-html5-samples.html</id><category scheme="/tags/html-5.html" term="html 5" label="html 5"/><content type="html">&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;tag: &amp;lt;details&amp;gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+
+&lt;p&gt;
+This tag works only with the Chrome browser.
+&lt;/p&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+&lt;/li&gt;
+&lt;li&gt;Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.
+&lt;/li&gt;
+&lt;li&gt;Sed diam.
+&lt;/li&gt;
+&lt;li&gt;Nam vestibulum accumsan nisl.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/details&gt;
+
+
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b22222;"&gt;#+HTML:&lt;/span&gt; &lt;span style="color: #7f7f7f;"&gt;&amp;lt;details&amp;gt;&lt;/span&gt;
+&lt;span style="color: #b22222;"&gt;#+HTML:&lt;/span&gt; &lt;span style="color: #7f7f7f;"&gt;&amp;lt;summary&amp;gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit&amp;lt;/summary&amp;gt;&lt;/span&gt;
+,- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+,- Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.
+,- Sed diam.
+,- Nam vestibulum accumsan nisl.
+&lt;span style="color: #b22222;"&gt;#+HTML:&lt;/span&gt; &lt;span style="color: #7f7f7f;"&gt;&amp;lt;/details&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">Example of some org syntax</title><author><name>nil</name></author><link href="http://renard.github.com/o-blog/tips/2012/01/07_example-of-some-org-syntax.html"/><updated>2012-01-07T11:23:00Z</updated><published>2012-01-07T11:23:00Z</published><id>tips/2012/01/07_example-of-some-org-syntax.html</id><category scheme="/tags/usage.html" term="usage" label="usage"/><category scheme="/tags/org.html" term="org" label="org"/><content type="html">&lt;?xml version="1.0" encoding="gbk"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/title&gt;
+&lt;meta http-equiv="Content-Type" content="text/html;charset=gbk"/&gt;
+&lt;meta name="title" content="&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;"/&gt;
+&lt;meta name="generator" content="Org-mode"/&gt;
+&lt;meta name="generated" content="2013-05-02T23:18+0800"/&gt;
+&lt;meta name="author" content=""/&gt;
+&lt;meta name="description" content=""/&gt;
+&lt;meta name="keywords" content=""/&gt;
+&lt;style type="text/css"&gt;
+ &lt;!--/*--&gt;&lt;![CDATA[/*&gt;&lt;!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]&gt;*/--&gt;
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+&lt;!--/*--&gt;&lt;![CDATA[/*&gt;&lt;!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]&gt;*///--&gt;
+&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="preamble"&gt;
+
+&lt;/div&gt;
+
+&lt;div id="content"&gt;
+&lt;h1 class="title"&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/h1&gt;
+&lt;/p&gt;
+&lt;p&gt;&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;div id="outline-container-1" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-1"&amp;gt;Titles&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-1"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+This is a level 1
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-1-1" class="outline-4"&amp;gt;
+&amp;lt;h4 id="sec-1-1"&amp;gt;Level 2&amp;lt;/h4&amp;gt;
+&amp;lt;div class="outline-text-4" id="text-1-1"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+This is a level 2
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-1-1-1" class="outline-5"&amp;gt;
+&amp;lt;h5 id="sec-1-1-1"&amp;gt;Level 3&amp;lt;/h5&amp;gt;
+&amp;lt;div class="outline-text-5" id="text-1-1-1"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+This is a level 3
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-1-1-1-1" class="outline-6"&amp;gt;
+&amp;lt;h6 id="sec-1-1-1-1"&amp;gt;Level 4&amp;lt;/h6&amp;gt;
+&amp;lt;div class="outline-text-6" id="text-1-1-1-1"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+This is a level 4
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-1-1-1-1-1" class="outline-7"&amp;gt;
+&amp;lt;h7 id="sec-1-1-1-1-1"&amp;gt;Level 5&amp;lt;/h7&amp;gt;
+&amp;lt;div class="outline-text-7" id="text-1-1-1-1-1"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+This is a level 5
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-1-1-1-1-1-1" class="outline-8"&amp;gt;
+&amp;lt;h8 id="sec-1-1-1-1-1-1"&amp;gt;Level 6&amp;lt;/h8&amp;gt;
+&amp;lt;div class="outline-text-8" id="text-1-1-1-1-1-1"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+This is a level 6
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+Up to 6 levels of indentation can be used.
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-2" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-2"&amp;gt;Praragaphs&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-2"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit
+tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+dolor. Nullam tristique diam non turpis. Cras placerat accumsan
+nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+&amp;lt;/p&amp;gt;
+&lt;/p&gt;
+
+
+
+&lt;div class="two-cols"&gt;
+
+&lt;p&gt;
+&amp;lt;p&amp;gt;
+Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec
+facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis
+odio. Nunc porta vulputate tellus. Nunc rutrum turpis sed pede. Sed
+bibendum. Aliquam posuere. Nunc aliquet, augue nec adipiscing interdum,
+lacus tellus malesuada massa, quis varius mi purus non odio. Pellentesque
+condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non
+luctus diam neque sit amet urna. Curabitur vulputate vestibulum lorem. Fusce
+sagittis, libero non molestie mollis, magna orci ultrices dolor, at
+vulputate neque nulla lacinia eros. Sed id ligula quis est convallis
+tempor. Curabitur lacinia pulvinar nibh. Nam a sapien.
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+Pellentesque dapibus suscipit ligula. Donec posuere augue in quam. Etiam vel
+tortor sodales tellus ultricies commodo. Suspendisse potenti. Aenean in sem
+ac leo mollis blandit. Donec neque quam, dignissim in, mollis nec, sagittis
+eu, wisi. Phasellus lacus. Etiam laoreet quam sed arcu. Phasellus at dui in
+ligula mollis ultricies. Integer placerat tristique nisl. Praesent
+augue. Fusce commodo. Vestibulum convallis, lorem a tempus semper, dui dui
+euismod elit, vitae placerat urna tortor vitae lacus. Nullam libero mauris,
+consequat quis, varius et, dictum id, arcu. Mauris mollis tincidunt
+felis. Aliquam feugiat tellus ut neque. Nulla facilisis, risus a rhoncus
+fermentum, tellus tellus lacinia purus, et dictum nunc justo sit amet elit.
+&amp;lt;/p&amp;gt;
+&lt;/p&gt;
+
+
+
+&lt;/div&gt;
+
+
+&lt;p&gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p class="verse"&amp;gt;
+Great clouds overhead&amp;lt;br/&amp;gt;
+Tiny black birds rise and fall&amp;lt;br/&amp;gt;
+Snow covers Emacs&amp;lt;br/&amp;gt;
+&amp;lt;br/&amp;gt;
+&amp;amp;ndash; AlexSchroeder&amp;lt;br/&amp;gt;
+&amp;lt;/p&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;blockquote&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;Everything should be made as simple as possible,
+but not any simpler &amp;amp;ndash; Albert Einstein
+&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;div style="text-align: center"&amp;gt;
+&amp;lt;p&amp;gt;Everything should be made as simple as possible, &amp;lt;br/&amp;gt;
+but not any simpler
+&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-3" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-3"&amp;gt;Lists&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-3"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+As taken from the Org-mode manual:
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+My favorite scenes are (in this order)
+&amp;lt;/p&amp;gt;&amp;lt;ol&amp;gt;
+&amp;lt;li&amp;gt;The attack of the Rohirrim
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Eowyn's fight with the witch king
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;this was already my favorite scene in the book
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;I really like Miranda Otto.
+&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Peter Jackson being shot by Legolas
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;on DVD only
+&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;           He makes a really funny face when it happens.
+&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+&amp;lt;/p&amp;gt;&amp;lt;dl&amp;gt;
+&amp;lt;dt&amp;gt;Elijah Wood&amp;lt;/dt&amp;gt;&amp;lt;dd&amp;gt;He plays Frodo
+&amp;lt;/dd&amp;gt;
+&amp;lt;dt&amp;gt;Sean Austin&amp;lt;/dt&amp;gt;&amp;lt;dd&amp;gt;He plays Sam, Frodo's friend.  I still remember
+          him very well from his role as Mikey Walsh in The Goonies.
+&amp;lt;/dd&amp;gt;
+&amp;lt;/dl&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-4" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-4"&amp;gt;Footnotes&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-4"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+The Org-mode homepage&amp;lt;sup&amp;gt;&amp;lt;a class="footref" name="fnr-.1" href="#fn-.1"&amp;gt;1&amp;lt;/a&amp;gt;&amp;lt;/sup&amp;gt; now looks a lot better than it used to.
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-5" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-5"&amp;gt;Emphasis and monospace&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-5"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+You can make words &amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;, &amp;lt;i&amp;gt;italic&amp;lt;/i&amp;gt;, &amp;lt;span style="text-decoration:underline;"&amp;gt;underlined&amp;lt;/span&amp;gt;, &amp;lt;code&amp;gt;code&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;verbatim&amp;lt;/code&amp;gt;,
+and, if you must, &amp;lt;code&amp;gt;+strike-through+&amp;lt;/code&amp;gt;. Text in the code and verbatim string
+is not processed for Org-mode specific syntax; it is exported verbatim.
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-6" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-6"&amp;gt;Horizontal rules&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-6"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+A line consisting of only dashes, and at least 5 of them, will be exported
+as a horizontal line (&amp;lt;code&amp;gt;&amp;amp;amp;lt;hr/&amp;amp;gt;&amp;lt;/code&amp;gt; in HTML and &amp;lt;code&amp;gt;\hrule&amp;lt;/code&amp;gt; in LaTeX).
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;hr/&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+As shown previously.
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-7" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-7"&amp;gt;Comment lines&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-7"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+Lines starting with &amp;lt;code&amp;gt;#&amp;lt;/code&amp;gt; in column zero are treated as comments and will
+never be exported. If you want an indented line to be treated as a comment,
+start it with &amp;lt;code&amp;gt;#+ =. Also, entire subtrees starting with the word =COMMENT&amp;lt;/code&amp;gt;
+will never be exported. Finally, regions surrounded by &amp;lt;code&amp;gt;#+BEGIN_COMMENT&amp;lt;/code&amp;gt;
+&amp;amp;hellip; &amp;lt;code&amp;gt;#+END_COMMENT&amp;lt;/code&amp;gt; will not be exported.
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/div&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div id="outline-container-8" class="outline-3"&amp;gt;
+&amp;lt;h3 id="sec-8"&amp;gt;Images and Tables&amp;lt;/h3&amp;gt;
+&amp;lt;div class="outline-text-3" id="text-8"&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+Table
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;&amp;lt;table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="tbl-basic-data"&amp;gt;
+&amp;lt;caption&amp;gt;This is the caption for the next table (or link)&amp;lt;/caption&amp;gt;
+&amp;lt;colgroup&amp;gt;&amp;lt;col class="right" /&amp;gt;&amp;lt;col class="right" /&amp;gt;&amp;lt;col class="left" /&amp;gt;&amp;lt;col class="left" /&amp;gt;&amp;lt;col class="left" /&amp;gt;
+&amp;lt;/colgroup&amp;gt;
+&amp;lt;thead&amp;gt;
+&amp;lt;tr&amp;gt;&amp;lt;th scope="col" class="right"&amp;gt;Header 1&amp;lt;/th&amp;gt;&amp;lt;th scope="col" class="right"&amp;gt;Header 2&amp;lt;/th&amp;gt;&amp;lt;th scope="col" class="left"&amp;gt;Header 3&amp;lt;/th&amp;gt;&amp;lt;th scope="col" class="left"&amp;gt;Header 4&amp;lt;/th&amp;gt;&amp;lt;th scope="col" class="left"&amp;gt;Header 5&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;
+&amp;lt;/thead&amp;gt;
+&amp;lt;tbody&amp;gt;
+&amp;lt;tr&amp;gt;&amp;lt;td class="right"&amp;gt;1.1&amp;lt;/td&amp;gt;&amp;lt;td class="right"&amp;gt;1.2&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;1.3&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;X&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;This &amp;lt;i&amp;gt;cell&amp;lt;/i&amp;gt; has a &amp;lt;b&amp;gt;very&amp;lt;/b&amp;gt; &amp;lt;code&amp;gt;long&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;line&amp;lt;/code&amp;gt; &amp;lt;span style="text-decoration:underline;"&amp;gt;with&amp;lt;/span&amp;gt;  &amp;lt;sub&amp;gt;special&amp;lt;/sub&amp;gt; &amp;lt;sup&amp;gt;layouts&amp;lt;/sup&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;&amp;lt;td class="right"&amp;gt;2.1&amp;lt;/td&amp;gt;&amp;lt;td class="right"&amp;gt;2.2&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;3.3&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;Y&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;
+&amp;lt;/tbody&amp;gt;
+&amp;lt;tbody&amp;gt;
+&amp;lt;tr&amp;gt;&amp;lt;td class="right"&amp;gt;3.1&amp;lt;/td&amp;gt;&amp;lt;td class="right"&amp;gt;3.1&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;C.1&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;D.1&amp;lt;/td&amp;gt;&amp;lt;td class="left"&amp;gt;E.1&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;
+&amp;lt;/tbody&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&amp;lt;p&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+Image
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div id="postamble"&gt;
+&lt;p class="date"&gt;Date: 2013-05-02T23:18+0800&lt;/p&gt;
+&lt;p class="author"&gt;Author: &lt;/p&gt;
+&lt;p class="creator"&gt;&lt;a href="http://orgmode.org"&gt;Org&lt;/a&gt; version 7.9.3f with &lt;a href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; version 24&lt;/p&gt;
+&lt;a href="http://validator.w3.org/check?uri=referer"&gt;Validate XHTML 1.0&lt;/a&gt;
+
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content></entry>
+</feed>
