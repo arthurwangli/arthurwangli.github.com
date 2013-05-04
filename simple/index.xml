@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>oblog bootstrap starter template</title>
+  <link href="index.xml" rel="self" />
+  <link href=""/>
+  <updated>2013-05-04T17:31:24Z</updated>
+  <id>index.xml</id>
+  
+</feed>
